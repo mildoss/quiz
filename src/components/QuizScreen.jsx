@@ -4,7 +4,7 @@ export default function QuizScreen({flag, score, options,handleAnswer, questionC
   return (
     <div className={styles.container}>
       <div className={styles.progress}>
-        <div className={styles.progressBar} style={ {width: `${progress}%`} }>‎</div>
+        <div className={styles.progressBar} style={{width: `${progress}%`}}>‎</div>
       </div>
       <img src={flag} alt="flag" className={styles.flag}/>
       <h3 className={styles.score}>Score: {score}</h3>
