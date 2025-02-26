@@ -12,7 +12,7 @@ function App() {
   const [questionCount, setQuestionCount] = useState(0);
 
   useEffect(() => {
-    fetch(`https://quiz-git-back-vlads-projects-75803716.vercel.app/api/flags?count=${questionCount}`, {
+    fetch(`localhost:3000/api/flags?count=${questionCount}`, {
       method: 'GET',
       credentials: 'include',
       headers: {
