@@ -1,9 +1,10 @@
 {
   "name": "quiz",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "api/index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node api/index.js",
+    "dev": "nodemon api/index.js"
   },
   "description": "A simple quiz API providing random flag questions",
   "keywords": ["quiz", "flags", "api"],
@@ -14,6 +15,6 @@
     "express": "^4.21.2"
   },
   "engines": {
-    "node": "22.x"
+    "node": "20.x"
   }
 }
