@@ -1,9 +1,9 @@
 {
   "name": "quiz",
   "version": "1.0.0",
-  "main": "server1.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node server1.js"
+    "start": "node server.js"
   },
   "description": "A simple quiz API providing random flag questions",
   "keywords": ["quiz", "flags", "api"],
