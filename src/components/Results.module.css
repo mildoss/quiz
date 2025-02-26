@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  margin: 10vh auto;
+  padding: 1rem;
+  border-radius: 10px;
+  background: linear-gradient(#b4eda8, #f3da96);
+  box-shadow: 10px 10px 10px #b4eda8;
+}
+
+.title {
+  font-size: 32px;
+  margin-block: 1vh;
+}
+
+.score {
+  font-size: 28px;
+  margin-block: 2vh;
+}
+
+.button {
+  padding: 10px 30px;
+  background-color: #ced3e4;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #98b3ff;
+}
+
+.button:active {
+  transform: scale(1.1);
+}
