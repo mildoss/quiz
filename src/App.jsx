@@ -12,10 +12,19 @@ function App() {
   const [questionCount, setQuestionCount] = useState(0);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/flags?count=${questionCount}`)
+    fetch(`https://quiz-git-back-vlads-projects-75803716.vercel.app/api/flags?count=${questionCount}`, {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
       .then(res => res.json())
       .then(data => setFlags(data))
-  },[questionCount])
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }, [questionCount]);
 
   const handleAnswer = (answer) => {
     if(answer === flags[currentIndex].correct) {
