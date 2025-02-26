@@ -1,7 +1,7 @@
 const { flags, randomQuestion } = require("./flags");
 
 module.exports = (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://quiz-git-front-vlads-projects-75803716.vercel.app");
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
   res.setHeader("Access-Control-Allow-Credentials", "true");
@@ -15,6 +15,12 @@ module.exports = (req, res) => {
     return res.status(400).json({ error: "No such flags" });
   }
 
-  const selectedFlags = randomQuestion(count);
-  res.json(selectedFlags);
+  try {
+    const selectedFlags = randomQuestion(count);
+    res.json(selectedFlags);
+  } catch (error) {
+    console.error("Error generating question:", error);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+
 };
