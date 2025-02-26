@@ -1,12 +1,3 @@
-const shuffleOptions = (options) => {
-  const shuffled = [...options];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]; // Меняем местами элементы
-  }
-  return shuffled;
-}
-
 const flags = [
   { flag: "https://flagcdn.com/w320/fr.png", options: shuffleOptions(["France", "Italy", "Germany", "Spain"]), correct: "France" },
   { flag: "https://flagcdn.com/w320/de.png", options: shuffleOptions(["Germany", "Austria", "Belgium", "Netherlands"]), correct: "Germany" },
@@ -31,6 +22,16 @@ const flags = [
   { flag: "https://flagcdn.com/w320/pl.png", options: shuffleOptions(["Poland", "Czech Republic", "Slovakia", "Hungary"]), correct: "Poland" },
   { flag: "https://flagcdn.com/w320/ro.png", options: shuffleOptions(["Romania", "Bulgaria", "Serbia", "Moldova"]), correct: "Romania" },
 ];
+
+function shuffleOptions(options) {
+  const shuffled = [...options];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]; // Swap elements
+  }
+  return shuffled;
+}
+
 
 const randomQuestion = (count) => {
   const shuffled = [...flags].sort(() => 0.5 - Math.random());
