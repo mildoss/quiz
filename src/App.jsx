@@ -26,6 +26,7 @@ function App() {
       });
   }, [questionCount]);
 
+
   const handleAnswer = (answer) => {
     if(answer === flags[currentIndex].correct) {
       setScore(score + 1);
