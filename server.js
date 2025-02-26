@@ -4,7 +4,7 @@ const { flags, randomQuestion } = require('./flags');
 const app = express();
 
 const corsOptions = {
-  origin: '*',
+  origin: 'https://quiz-git-front-vlads-projects-75803716.vercel.app',
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
