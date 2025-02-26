@@ -3,7 +3,11 @@ const cors = require('cors');
 const { flags, randomQuestion } = require('./flags');
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://quiz-git-front-vlads-projects-75803716.vercel.app/', // Укажи URL своего фронта
+  credentials: true
+}));
+
 
 app.get("/api/flags", (req, res) => {
   const count = parseInt(req.query.count) || 5;
