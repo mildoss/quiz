@@ -1,16 +1,19 @@
 {
   "name": "quiz",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
+  "description": "A simple quiz API providing random flag questions",
+  "keywords": ["quiz", "flags", "api"],
+  "author": "Mildos",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.2"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
