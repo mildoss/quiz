@@ -1,22 +1,22 @@
-const express = require('express')
-const cors = require('cors')
-const {flags,randomQuestion} = require('./flags')
-const app = express()
-app.use(cors()) ;
+const express = require('express');
+const cors = require('cors');
+const { flags, randomQuestion } = require('./flags');
+const app = express();
 
+app.use(cors());
 
 app.get("/api/flags", (req, res) => {
   const count = parseInt(req.query.count) || 5;
 
-  if(count > flags.length) {
-    return res.status(400).json({error: 'No such flags'})
+  if (count > flags.length) {
+    return res.status(400).json({ error: 'No such flags' });
   }
 
-  const selectedFlags = randomQuestion(count)
-  res.json(selectedFlags)
-})
+  const selectedFlags = randomQuestion(count);
+  res.json(selectedFlags);
+});
 
-app.listen(3000, () => {
-  console.log(`App listening on port 3000`)
-})
-
+const port = process.env.PORT || 3000; // используй переменную окружения PORT
+app.listen(port, () => {
+  console.log(`App listening on port ${port}`);
+});
