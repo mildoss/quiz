@@ -24,9 +24,6 @@ const flags = [
 ];
 
 function shuffleOptions(options) {
-  if (!Array.isArray(options)) {
-    throw new Error("Options must be an array");
-  }
   const shuffled = [...options];
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -34,7 +31,6 @@ function shuffleOptions(options) {
   }
   return shuffled;
 }
-
 
 
 const randomQuestion = (count) => {

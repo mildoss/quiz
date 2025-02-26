@@ -1,10 +1,10 @@
 {
   "name": "quiz",
   "version": "1.0.0",
-  "main": "api/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node api/index.js",
-    "dev": "nodemon api/index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "description": "A simple quiz API providing random flag questions",
   "keywords": ["quiz", "flags", "api"],
