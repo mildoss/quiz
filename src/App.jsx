@@ -1,5 +1,5 @@
 import './App.css'
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import QuizScreen from "./components/QuizScreen.jsx";
 import StartGame from "./components/StartGame.jsx";
 import Results from "./components/Results.jsx";
@@ -10,12 +10,6 @@ function App() {
   const [score, setScore] = useState(0);
   const [isStarted, setIsStarted] = useState(false);
   const [questionCount, setQuestionCount] = useState(0);
-  console.log('123')
-  useEffect(() => {
-    fetch(`https://test-pi-tawny-79.vercel.app/api/flags?count=${questionCount}`)
-      .then(res => res.json())
-      .then(data => setFlags(data))
-  },[questionCount])
 
   const handleAnswer = (answer) => {
     if(answer === flags[currentIndex].correct) {
@@ -24,12 +18,19 @@ function App() {
     setCurrentIndex(prevIndex =>prevIndex + 1);
   }
 
-  const handleStartGame  = (count) => {
+  const handleStartGame = async (count) => {
+    setIsStarted(false);
+    setFlags([]);
     setQuestionCount(count);
+
+    const res = await fetch(`https://test-pi-tawny-79.vercel.app/api/flags?count=${count}`);
+    const data = await res.json();
+
+    setFlags(data);
     setIsStarted(true);
-    setCurrentIndex(0)
-    setScore(0)
-  }
+    setCurrentIndex(0);
+    setScore(0);
+  };
 
   const handleRestart  = () => {
     setIsStarted(false);
