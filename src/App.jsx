@@ -10,7 +10,7 @@ function App() {
   const [score, setScore] = useState(0);
   const [isStarted, setIsStarted] = useState(false);
   const [questionCount, setQuestionCount] = useState(0);
-
+  console.log('123')
   useEffect(() => {
     fetch(`https://test-pi-tawny-79.vercel.app/api/flags?count=${questionCount}`)
       .then(res => res.json())
