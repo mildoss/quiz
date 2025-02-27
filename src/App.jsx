@@ -12,7 +12,7 @@ function App() {
   const [questionCount, setQuestionCount] = useState(0);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/flags?count=${questionCount}`)
+    fetch(`https://test-pi-tawny-79.vercel.app/api/flags?count=${questionCount}`)
       .then(res => res.json())
       .then(data => setFlags(data))
   },[questionCount])
