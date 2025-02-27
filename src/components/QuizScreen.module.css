@@ -71,3 +71,14 @@
 .optionButton:hover {
   background-position: 100% 100%;
 }
+
+@media(max-width: 400px) {
+  .container {
+    width: 100%;
+    max-width: 350px;
+  }
+  .score {
+    font-size: 48px;
+    text-align: center;
+  }
+}
